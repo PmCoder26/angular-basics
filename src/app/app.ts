@@ -10,4 +10,7 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   title = 'Parimal Angular Basics'
   name = 'Parimal Matte'
+
+  // users: string[] = ['Parimal', 'Rohit', 'Hemant', 'Karunya', 'Shashank', 'Ishant']
+  users: string[] = []  // for 'empty() {}' block.
 }

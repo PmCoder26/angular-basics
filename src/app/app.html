@@ -1,3 +1,52 @@
 <h1>Hello Angular Basics</h1>
 <h2>Title: {{title}}</h2>
 <h3>Welcome {{name}}!</h3>
+
+<hr>
+
+<h2>Users</h2>
+
+<!-- Iterate through the users list.
+     'track user' uniquely identifies each item.
+     '$index' is stored in the local variable 'i'. -->
+@for(user of users; track user; let i = $index) {
+
+  <!-- Display different styling for the first and last user. -->
+  <!--
+  @if($first || $last) {
+    <h3 style="margin-left: 20px; background-color: red; color: white; padding: 5px;">
+      This is our user {{i + 1}} with name {{user}}
+    </h3>
+  } @else {
+    <h3 style="margin-left: 20px;">
+      This is our user {{i + 1}} with name {{user}}
+    </h3>
+  }
+  -->
+
+  <!-- Apply different styles based on whether the current index is even or odd. -->
+  @if($even) {
+    <h3 style="margin-left: 20px; background-color: rgb(0, 106, 255); color: white; padding: 5px;">
+      This is our user {{i + 1}} with name {{user}}
+    </h3>
+  } @else {
+    <h3 style="margin-left: 20px; background-color: rgb(0, 255, 26); color: rgb(24, 23, 23); padding: 5px;">
+      This is our user {{i + 1}} with name {{user}}
+    </h3>
+  }
+
+  <!-- Display the total number of users after rendering the last item. -->
+  @if($last) {
+    <h3 style="background-color: #a34becbd; color: white; padding: 10px;">
+      Total No. of users: {{$count}}
+    </h3>
+  }
+
+}
+
+<!-- Executed only when the associated @for loop has no items to iterate over. -->
+@empty() {
+  <h2 style="background-color: brown; color: white; padding: 5px; border-radius: 10px;">
+    No record found!
+  </h2>
+}
