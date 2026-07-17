@@ -50,3 +50,77 @@
     No record found!
   </h2>
 }
+
+<hr>
+
+<!-- Two-Way Binding ([(ngModel)]) requires FormsModule -->
+<h2>Two Way Binding</h2>
+
+<div>
+
+  <!-- [(ngModel)] creates two-way binding between the input field and the component property. -->
+  <h3>1. Text Input</h3>
+
+  <label for="userName">Name:</label>
+
+  <input
+    [(ngModel)]="userName"
+    type="text"
+    name="userName"
+    placeholder="Enter your username"
+    style="margin-left: 10px;"
+  >
+
+  <!-- {{ }} (Interpolation) displays the current value of the component property. -->
+  <p>User Name: <b>{{ userName }}</b></p>
+
+
+  <!-- Number input using two-way binding -->
+  <h3>2. Number Input</h3>
+
+  <label for="age">Age:</label>
+
+  <input
+    [(ngModel)]="age"
+    type="number"
+    name="age"
+    placeholder="Enter your age"
+    style="margin-left: 10px;"
+  >
+
+  <!-- Interpolation renders the updated age. -->
+  <p>Age: <b>{{ age }}</b></p>
+
+
+  <!-- Checkbox binds a boolean property using ngModel. -->
+  <h3>3. Checkbox</h3>
+
+  <label for="isAdmin">Admin:</label>
+
+  <input
+    [(ngModel)]="isAdmin"
+    type="checkbox"
+    name="isAdmin"
+  >
+
+  <!-- Displays whether the checkbox is checked or not. -->
+  <p>Is Admin: <b>{{ isAdmin }}</b></p>
+
+
+  <div style="margin-top: 10px;">
+
+    <!-- (click) is an event binding that invokes the component method when the button is clicked. -->
+    <button (click)="loadSampleData()">
+      Load Sample Data
+    </button>
+
+    <!-- Calls the reset method on button click. -->
+    <button
+      (click)="resetSampleData()"
+      style="margin-left: 10px;">
+      Reset
+    </button>
+
+  </div>
+
+</div>
