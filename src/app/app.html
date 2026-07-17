@@ -124,3 +124,42 @@
   </div>
 
 </div>
+
+<hr>
+
+<!-- Todo List. -->
+<div>
+
+  <h2 style="text-align: center;">Todo List</h2>
+  
+  <div id="addSection">
+    <input 
+      [(ngModel)] = "taskString" 
+      type="text" name="task" 
+      placeholder="Enter a task..."
+      (input) = "clearWarning()"
+    >
+    <button (click) = "addTask()" >Add</button>
+  </div>
+
+  @for(todo of todos; track todo.id) {
+    <div id="todo-item">
+      <span id="todo-index">{{todo.id + 1}}</span>
+      <span id="separator">|</span>
+      <span id="todo-title">{{todo.title}}</span>
+      <div id="todo-status">
+        <span style="font-size: large;">Completed</span>
+        <input type="checkbox" [(ngModel)]="todo.completed" id="todo-check">
+      </div>
+      <button (click) = "deleteTask(todo.id)" id="todo-delete">Delete</button>
+    </div>    
+  }
+  @empty() {
+    <p style="font-size:larger;">No tasks to display</p>
+  }
+
+  @if(warningMessge) {
+    <p style="font-size: larger;">{{warningMessge}}</p>
+  }
+
+</div>
