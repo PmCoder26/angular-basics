@@ -163,3 +163,23 @@
   }
 
 </div>
+
+<hr>
+
+<!-- Dynamic Styling -->
+<div>
+
+  <!-- Heading with dynamic styles -->
+  <h2
+    [style.backgroundColor]="bgColor"
+    [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall"
+  >
+    Dynamic Styling
+  </h2>
+
+  <!-- Toggle the font size -->
+  <button (click)="toggleHeadingSize()">
+    Toggle Font Size
+  </button>
+
+</div>
