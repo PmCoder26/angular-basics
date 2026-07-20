@@ -65,31 +65,31 @@ export class App {
     this.warningMessge = '';
   }
 
-// ===============================
-// Dynamic Styling
-// ===============================
+  // ===============================
+  // Dynamic Styling
+  // ===============================
 
-// Background color applied to the heading.
-bgColor = 'green';
+  // Background color applied to the heading.
+  bgColor = 'green';
 
-// Default font size (not currently used in the template, but can be used if needed).
-fontSize = '30px';
+  // Default font size (not currently used in the template, but can be used if needed).
+  fontSize = '30px';
 
-// Font size when the heading is enlarged.
-headingSizeBig = '80px';
+  // Font size when the heading is enlarged.
+  headingSizeBig = '80px';
 
-// Font size when the heading is in its normal state.
-headingSizeSmall = '30px';
+  // Font size when the heading is in its normal state.
+  headingSizeSmall = '30px';
 
-// Controls whether the heading is displayed in large or small size.
-// true  -> headingSizeBig
-// false -> headingSizeSmall
-zoom = false;
+  // Controls whether the heading is displayed in large or small size.
+  // true  -> headingSizeBig
+  // false -> headingSizeSmall
+  zoom = false;
 
-// Toggles the heading size between large and small.
-toggleHeadingSize() {
-  this.zoom = !this.zoom;
-}
+  // Toggles the heading size between large and small.
+  toggleHeadingSize() {
+    this.zoom = !this.zoom;
+  }
 
 
 }
