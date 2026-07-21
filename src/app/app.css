@@ -59,3 +59,14 @@
     border-color: rgb(194, 247, 244);
     border-radius: 11px;
 }
+
+#colorButtonContainer {
+    display: flex;
+    justify-content: center;    
+}
+
+.colorButton {
+    height: 30px;
+    width: 60px;
+    margin-inline: 40px;
+}

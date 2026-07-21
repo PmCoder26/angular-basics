@@ -183,3 +183,116 @@
   </button>
 
 </div>
+
+<hr>
+
+<!-- ===============================
+     Angular Structural Directives
+     Demonstrates:
+     *ngIf, *ngFor and ngSwitch
+     =============================== -->
+
+<div>
+
+  <!-- ===============================
+       *ngIf Example
+       Displays the heading only when
+       showHeading is true.
+       =============================== -->
+  <h2 *ngIf="showHeading" style="text-align: center;">
+    Heading Tag with *ngIf
+  </h2>
+
+  <!-- Toggle the visibility of the heading -->
+  <button (click)="toggleDirectiveHeading()">
+    Toggle Heading Visibility
+  </button>
+
+  <!-- ===============================
+       *ngFor Example
+       Displays a list of students in
+       a table by iterating over the
+       students array.
+       =============================== -->
+
+  <h3 style="text-align: center;">Students</h3>
+
+  <!-- Center the table and merge adjacent borders -->
+  <table style="border: 1px solid black; border-collapse: collapse; margin: 0 auto;">
+
+    <!-- Table Header -->
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid black; padding: 8px;">Roll No.</th>
+      <th style="border: 1px solid black; padding: 8px;">Name</th>
+      <th style="border: 1px solid black; padding: 8px;">Age</th>
+    </tr>
+
+    <!-- Create one row for each student -->
+    <tr *ngFor="let student of students">
+      <td style="border: 1px solid black; padding: 8px;">
+        {{ student.rollNo }}
+      </td>
+
+      <td style="border: 1px solid black; padding: 8px;">
+        {{ student.name }}
+      </td>
+
+      <td style="border: 1px solid black; padding: 8px;">
+        {{ student.age }}
+      </td>
+    </tr>
+
+  </table>
+
+  <!-- ===============================
+       ngSwitch Example
+       Displays different headings
+       depending on the selected color.
+       =============================== -->
+
+  <h2 style="text-align: center;">
+    Heading for ngSwitch Directive
+  </h2>
+
+  <!-- Buttons to change the selected color -->
+  <div id="colorButtonContainer">
+    <button class="colorButton" (click)="changeColor('red')">Red</button>
+    <button class="colorButton" (click)="changeColor('blue')">Blue</button>
+    <button class="colorButton" (click)="changeColor('green')">Green</button>
+    <button class="colorButton" (click)="changeColor('yellow')">Yellow</button>
+    <button class="colorButton" (click)="changeColor('pink')">Pink</button>
+  </div>
+
+  <!-- Switch based on the current color -->
+  <div [ngSwitch]="color">
+
+    <h3 *ngSwitchCase="'red'"
+        style="background-color: red; color: white; text-align: center;">
+      Red Color
+    </h3>
+
+    <h3 *ngSwitchCase="'blue'"
+        style="background-color: blue; color: white; text-align: center;">
+      Blue Color
+    </h3>
+
+    <h3 *ngSwitchCase="'green'"
+        style="background-color: green; color: white; text-align: center;">
+      Green Color
+    </h3>
+
+    <h3 *ngSwitchCase="'yellow'"
+        style="background-color: yellow; text-align: center;">
+      Yellow Color
+    </h3>
+
+    <h3 *ngSwitchCase="'pink'"
+        style="background-color: pink; text-align: center;">
+      Pink Color
+    </h3>
+
+  </div>
+
+</div>
+
+<hr>
