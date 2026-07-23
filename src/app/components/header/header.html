@@ -1,0 +1,51 @@
+<!-- ===============================
+     Angular Routing Navigation
+     
+     routerLink
+     ----------
+     Navigates to the specified route without reloading the page.
+
+     routerLinkActive
+     ----------------
+     Automatically adds the specified CSS class when the route
+     associated with this link is currently active.
+
+     routerLinkActiveOptions
+     -----------------------
+     The Home route ("/") is a prefix of every route. Setting
+     exact: true ensures the Home link is only active when the
+     current URL is exactly "/".
+================================ -->
+
+<nav>
+    <h2>Logo</h2>
+
+    <ul>
+
+        <li>
+            <a
+                routerLink=""
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/contact"
+                routerLinkActive="active">
+                Contact
+            </a>
+        </li>
+
+        <li>
+            <a
+                routerLink="/about"
+                routerLinkActive="active">
+                About
+            </a>
+        </li>
+
+    </ul>
+</nav>

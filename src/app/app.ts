@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { Todo } from './models/todos';
 import { NgIf, NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Student } from './models/student';
+import { Header } from './components/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormsModule, NgIf, NgFor, NgSwitch, NgSwitchCase],
+  imports: [RouterOutlet, FormsModule, NgIf, NgFor, NgSwitch, NgSwitchCase, Header],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -129,5 +130,9 @@ export class App {
   changeColor(color: string) {
     this.color = color;
   }
+
+  // ===============================
+  // Routing in Angular.
+  // ===============================
 
 }
